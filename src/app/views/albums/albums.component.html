@@ -1,0 +1,11 @@
+<div class="grid-container">
+  <div class="grid-scroll">
+    <div class="row" *ngFor="let row of albums | chunk:4; let i = index">
+      <div class="grid-cell col-xs-3" *ngFor="let album of row; let j = index" (click)="toggle(i * 4 + j)">
+        <div class="image" *ngIf="album.images && album.images[0]" [class.selected]="selectedAlbums.has(i * 4 + j)" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}"></div>
+        <p>{{album.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<button mat-raised-button (click)="next()">Next</button>

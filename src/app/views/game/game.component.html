@@ -1,0 +1,2 @@
+<app-track *ngIf="state === 'track'" [track]="currentTrack" (result)="result($event)"></app-track>
+<app-result *ngIf="state === 'result'" [correct]="correct" (next)="next()"></app-result>

@@ -1,0 +1,8 @@
+<!--<p>{{track.name}}</p>-->
+<mat-form-field class="example-full-width">
+  <input #songInput matInput autocomplete="off" placeholder="Song Name" [matAutocomplete]="auto" [(ngModel)]="input">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let songName of trackNames" [value]="songName">{{songName}}</mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<button mat-raised-button (click)="submit()">Submit</button>

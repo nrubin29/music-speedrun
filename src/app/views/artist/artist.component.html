@@ -1,0 +1,17 @@
+<header>
+  <h1>Search for an artist</h1>
+  <mat-form-field>
+    <input matInput placeholder="Artist" [(ngModel)]="artistName" />
+  </mat-form-field>
+  <button mat-raised-button (click)="search()">Search</button>
+</header>
+<div class="grid-container">
+  <div class="grid-scroll" *ngIf="artists">
+    <div class="row" *ngFor="let row of artists | chunk:4">
+      <div class="grid-cell col-xs-3" *ngFor="let artist of row" (click)="select(artist)">
+        <div class="image selected" *ngIf="artist.images && artist.images[0]" [ngStyle]="{'background-image': 'url(' + artist.images[0].url + ')'}"></div>
+        <p>{{artist.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

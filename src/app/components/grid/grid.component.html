@@ -1,0 +1,10 @@
+<div class="grid-container">
+  <div class="grid-scroll">
+    <!-- TODO: Chunk dynamically -->
+    <div class="row" *ngFor="let row of data | chunk:4">
+      <div class="grid-cell col-xs-3" *ngFor="let value of row">
+        <ng-template></ng-template>
+      </div>
+    </div>
+  </div>
+</div>
